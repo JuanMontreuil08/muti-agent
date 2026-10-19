@@ -19,8 +19,12 @@ import boto3
 import os
 import sys
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
 
-AWS_REGION   = os.environ.get('AWS_REGION', 'us-east-1')
+# Load AWS credentials and settings from .env when present.
+load_dotenv()
+
+AWS_REGION  = os.environ.get('AWS_REGION', 'us-east-1')
 PROJECT_NAME = os.environ.get('PROJECT_NAME', 'udacity-agentcore')
 
 dynamodb = boto3.resource('dynamodb', region_name=AWS_REGION)
