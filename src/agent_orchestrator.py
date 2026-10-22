@@ -464,6 +464,7 @@ found, say "No relevant {domain.lower()} policy found."."""
 
     # Create the ReturnsPolicyRetrieverAgent with the tool above
     returns_retriever = Agent(
+        name="ReturnsPolicyRetrieverAgent",
         model=retriever_model,
         system_prompt=_retriever_prompt('Returns', 'retrieve_returns_policy'),
         tools=[retrieve_returns_policy],
@@ -485,6 +486,7 @@ found, say "No relevant {domain.lower()} policy found."."""
 
     # Create the ShippingPolicyRetrieverAgent with the tool above
     shipping_retriever = Agent(
+        name="ShippingPolicyRetrieverAgent",
         model=retriever_model,
         system_prompt=_retriever_prompt('Shipping', 'retrieve_shipping_policy'),
         tools=[retrieve_shipping_policy],
@@ -506,6 +508,7 @@ found, say "No relevant {domain.lower()} policy found."."""
 
     # Create the WarrantyPolicyRetrieverAgent with the tool above
     warranty_retriever = Agent(
+        name="WarrantyPolicyRetrieverAgent",
         model=retriever_model,
         system_prompt=_retriever_prompt('Warranty', 'retrieve_warranty_policy'),
         tools=[retrieve_warranty_policy],
